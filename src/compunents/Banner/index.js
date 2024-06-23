@@ -1,6 +1,6 @@
 import React from "react";
 import "./style.scss";
-import videoSrc from "../../videoBanner/trailer.mp4";
+import videoSrc from "../../videoBanner/trailer2.mp4";
 // import "../../reset.css";
 import { FaPlay } from "react-icons/fa";
 import { FaInfoCircle } from "react-icons/fa";
