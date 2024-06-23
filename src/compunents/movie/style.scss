@@ -1,0 +1,15 @@
+a {
+    margin-right: 20px;
+
+    img {
+        width: 200px;
+        height: 290px;
+        border-radius: 10px;
+        transition: transform 0.2s ease;
+        object-fit: cover;
+
+        &:hover {
+            transform: scale(1.07);
+        }
+    }
+}

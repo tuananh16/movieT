@@ -1,6 +1,6 @@
 import React from "react";
 import "./style.scss";
-import videoSrc from "../../video-banner/test.mp4";
+import videoSrc from "../../videoBanner/trailer.mp4";
 // import "../../reset.css";
 import { FaPlay } from "react-icons/fa";
 import { FaInfoCircle } from "react-icons/fa";
@@ -9,7 +9,7 @@ function Banner() {
   return (
     <div className="banner">
       <div className="video-container">
-        <video className="banner-video" autoPlay muted loop>
+        <video className="banner-video" autoPlay muted controls Volume loop>
           <source src={videoSrc} type="video/mp4" />
         </video>
       </div>

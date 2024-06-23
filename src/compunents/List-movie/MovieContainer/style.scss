@@ -1,0 +1,102 @@
+.container-movie {
+    margin-bottom: 20px;
+    margin-top: 20px;
+    padding: 0px 60px;
+}
+
+.container-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+    margin-bottom: 20px;
+    padding: 0 20px;
+
+    h2 {
+        padding-left: 20px;
+        cursor: pointer;
+        font-size: 24px;
+        font-weight: bold;
+        transition: color 0.3s;
+
+        &:hover {
+            color: #ffcc00;
+        }
+    }
+
+    a {
+        display: inline-block;
+        cursor: pointer;
+        padding-left: 10px;
+        padding-top: 2px;
+        font-size: 16px;
+        color: #ffcc00;
+        text-decoration: none;
+        transition: color 0.3s;
+
+        &:hover {
+            color: #ffffff;
+        }
+    }
+}
+
+.slideshow-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.movies-list {
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+
+    .movie {
+        flex: 0 0 19%; // Hiển thị 5 ảnh cùng lúc
+        margin-right: 20px;
+        transition: transform 0.3s;
+
+        // // &:hover {
+        // //     transform: scale(1.00);
+        // // }
+
+        img {
+            width: 100%;
+            border-radius: 10px;
+        }
+    }
+}
+
+.prev,
+.next {
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    position: absolute;
+    align-items: center;
+    top: 50%;
+    width: 40px;
+    height: 40px;
+    margin-top: -22px;
+    padding: 16px;
+    color: black;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+.prev {
+    left: -4%;
+    border-radius: 3px 0 0 3px;
+}
+.next {
+    right: -4%;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover,
+.next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+}
