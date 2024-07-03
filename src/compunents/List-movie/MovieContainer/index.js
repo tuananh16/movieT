@@ -1,29 +1,28 @@
 import React, { useState } from "react";
-import Movie from "../../movie"; // Corrected the import
+import Movie from "../../movie";
 import "./style.scss";
+import { Link } from "react-router-dom";
 
 function MovieContainer({ data, movieTitle }) {
-  // Ensure data.items is defined and is an array
-  const movies = data.items || [];
-  // const totalMovies = movies.length;
+  const movies = data.items;
+  // console.log("data", movies);
 
-  const [startIndex, setStartIndex] = useState(0); // Start index of current 6-movie group
+  const [startIndex, setStartIndex] = useState(0);
   const totalMovies = data.items?.length || 0;
 
   const nextSlide = () => {
-    if (startIndex + 6 < totalMovies) {
-      setStartIndex(startIndex + 6);
+    if (startIndex + 5 < totalMovies) {
+      setStartIndex(startIndex + 5);
     } else {
-      setStartIndex(0); // Wrap around to the beginning
+      setStartIndex(0);
     }
   };
 
   const prevSlide = () => {
-    if (startIndex - 6 >= 0) {
-      setStartIndex(startIndex - 6);
+    if (startIndex - 5 >= 0) {
+      setStartIndex(startIndex - 5);
     } else {
-      // If at the beginning, go to the last group
-      const lastIndexGroup = Math.floor(totalMovies / 6) * 6;
+      const lastIndexGroup = Math.floor(totalMovies / 5) * 5;
       setStartIndex(lastIndexGroup);
     }
   };
@@ -32,34 +31,38 @@ function MovieContainer({ data, movieTitle }) {
     <div className="container-movie">
       <div className="container-title">
         <h2>{movieTitle}</h2>
-        <a href="#">&#187; Xem tất cả</a>
+        {/* <a href="#">&#187; Xem tất cả</a> */}
       </div>
-      <div className="slideshow-container">
-        <button
-          className="prev"
-          onClick={prevSlide}
-          // disabled={startIndex === 0}
-        >
-          &#10094;
-        </button>
-        <div className="movies-list">
-          {/* Map over the current 6-movie group */}
-          {movies
-            .slice(startIndex, startIndex + 6) // Ensure movies is defined before slicing
-            .map((movie, index) => (
-              <div className="movie" key={index}>
-                <Movie movie={movie} />
-              </div>
-            ))}
+      {movies ? (
+        <div className="slideshow-container">
+          <button className="prev" onClick={prevSlide}>
+            &#10094;
+          </button>
+          <div className="movies-list">
+            {/* Map over the current 5-movie group */}
+            {movies
+              .slice(startIndex, startIndex + 5) // Ensure movies is defined before slicing
+              .map((movie, index) => (
+                <Link to={`/phim/${movie.slug}`} className="movie" key={index}>
+                  <Movie movie={movie} />
+                </Link>
+              ))}
+          </div>
+          <button className="next" onClick={nextSlide}>
+            &#10095;
+          </button>
         </div>
-        <button
-          className="next"
-          onClick={nextSlide}
-          // disabled={startIndex + 6 >= totalMovies}
-        >
-          &#10096;
-        </button>
-      </div>
+      ) : (
+        <div className="loading">
+          <section className="dots-container">
+            <div className="dot"></div>
+            <div className="dot"></div>
+            <div className="dot"></div>
+            <div className="dot"></div>
+            <div className="dot"></div>
+          </section>
+        </div>
+      )}
     </div>
   );
 }

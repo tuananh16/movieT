@@ -4,35 +4,36 @@ import videoSrc from "../../videoBanner/trailer2.mp4";
 // import "../../reset.css";
 import { FaPlay } from "react-icons/fa";
 import { FaInfoCircle } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 function Banner() {
   return (
     <div className="banner">
       <div className="video-container">
-        <video className="banner-video" autoPlay muted controls Volume loop>
+        <video className="banner-video" autoPlay muted loop>
           <source src={videoSrc} type="video/mp4" />
         </video>
       </div>
       <div className="banner-info">
         <img
-          src="https://moviez.shop/movies/Your%20Name/logo.png"
+          src="https://moviez.shop/movies/Solo%20Leveling/logo.png"
           alt="logo"
           className="banner-logo"
         />
         <p className="banner-description">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum.
+          Trong một thế giới mà những thợ săn, những con người sở hữu khả năng
+          phép thuật, phải chiến đấu với những con quái vật chết người để bảo vệ
+          loài người khỏi sự hủy diệt, một thợ săn nổi tiếng yếu ớt tên là Sung
+          Jin-woo thấy mình ở trong một cuộc đấu tranh sinh tồn dường như bất
+          tận.
         </p>
         <div className="container-btn">
-          <button className="default-button btn">
-            <FaPlay />
-            phát
-          </button>
+          <Link to={`/phim/toi-thang-cap-mot-minh`}>
+            <button className="default-button btn">
+              <FaPlay />
+              phát
+            </button>
+          </Link>
           <button
             className="default-button btn btn-i"
             style={{ backgroundColor: "rgba(109, 109, 110, 0.7)" }}

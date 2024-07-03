@@ -1,15 +1,19 @@
 import React from "react";
 import "./style.scss";
 
-function Moive({ movie }) {
-  //   console.log(movie);
-  const { name, poster_url } = movie;
-
+function Movie({ movie }) {
+  const { name, thumb_url, current_episode } = movie;
   return (
-    <a href="#" alt={name}>
-      <img src={poster_url} alt={name} />
-    </a>
+    <div className="wrap-movie">
+      <div className="movie">
+        <img src={thumb_url} alt={name} title={name} />
+        <div className="info-movie">
+          <h3>Phim: {name}</h3>
+          <p>Tình trạng: {current_episode}</p>
+        </div>
+      </div>
+    </div>
   );
 }
 
-export default Moive;
+export default Movie;

@@ -4,7 +4,7 @@ const movieApi = {
   getAll(movie) {
     var url = window.location.pathname;
     var movie = url.substring(url.lastIndexOf("/") + 1);
-    const url2 = `/phim/${movie}`;
+    const url2 = `film/${movie}`;
     return axiosClient.get(url2);
   },
 };
