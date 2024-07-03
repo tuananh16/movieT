@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./style.scss";
 import movieApi from "../../api/movieApi";
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function DetailMovie(props) {
   const [movie, setMovie] = useState({});

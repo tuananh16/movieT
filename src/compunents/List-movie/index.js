@@ -21,9 +21,6 @@ function ListMoive() {
   useEffect(() => {
     const fetchMovie = async () => {
       try {
-        const params = {
-          _limit: 10,
-        };
         const [
           newUpDateApiRes,
           movieShowingApiRes,
@@ -31,11 +28,11 @@ function ListMoive() {
           singleMovieApiRes,
           TVShowApiRes,
         ] = await Promise.all([
-          newUpDateApi.getAll(),
-          movieShowingApi.getAll(),
-          seriesMovieApi.getAll(),
-          singleMovieApi.getAll(),
-          TVShowApi.getAll(),
+          newUpDateApi.getAll(1),
+          movieShowingApi.getAll(1),
+          seriesMovieApi.getAll(1),
+          singleMovieApi.getAll(1),
+          TVShowApi.getAll(1),
         ]);
         setNewUpDateData(newUpDateApiRes);
         setMovieShowingData(movieShowingApiRes);

@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
-import { Link } from "react-router-dom";
 import "./header.scss";
 import SearchMovieApi from "../../api/searchMovieApi"; // Đảm bảo rằng đường dẫn và tên tệp phù hợp với thực tế
 import useDebounce from "../useDebonce";
