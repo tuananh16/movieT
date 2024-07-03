@@ -1,7 +1,7 @@
 import React from "react";
 import Footer from "./common/Footer/footer";
 import Header from "./common/Header/header";
-import Banner from "./compunents/banner";
+import Banner from "./compunents/Banner";
 import ListMovie from "./compunents/List-movie";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import DetailMoive from "./compunents/detailMovie";
