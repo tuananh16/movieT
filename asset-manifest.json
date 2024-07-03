@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/movieT/static/css/main.768c517d.css",
+    "main.js": "/movieT/static/js/main.1e64bd26.js",
+    "static/js/453.2ca91c0e.chunk.js": "/movieT/static/js/453.2ca91c0e.chunk.js",
+    "static/media/trailer2.mp4": "/movieT/static/media/trailer2.0e580243cc66006a8ecb.mp4",
+    "index.html": "/movieT/index.html",
+    "main.768c517d.css.map": "/movieT/static/css/main.768c517d.css.map",
+    "main.1e64bd26.js.map": "/movieT/static/js/main.1e64bd26.js.map",
+    "453.2ca91c0e.chunk.js.map": "/movieT/static/js/453.2ca91c0e.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.768c517d.css",
+    "static/js/main.1e64bd26.js"
+  ]
+}
