@@ -29,14 +29,14 @@
 }
 
 .info-movie {
+    display: none;
     position: absolute;
-    bottom: 10px;
+    bottom: 25px;
     left: 10px;
     right: 10px;
     background: rgba(0, 0, 0, 0.7);
     padding: 10px;
     border-radius: 5px;
-    display: none;
     width: calc(100% - 20px); // Ensure it doesn't overflow the movie container
     box-sizing: border-box;
     transition: opacity 0.3s ease, transform 0.3s ease;
@@ -60,5 +60,16 @@
     p {
         color: #ffffff;
         font-size: 12px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .movie {
+        margin-right: 2px;
+    }
+
+    .movie .info-movie {
+        display: block !important;
+        opacity: 1;
     }
 }

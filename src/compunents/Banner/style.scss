@@ -48,6 +48,7 @@
 
         .container-btn {
             display: flex;
+            padding-top: 20px;
 
             .default-button {
                 background-color: white;
@@ -94,5 +95,15 @@
             }
         }
 
+    }
+}
+
+@media (max-width: 1200px) {
+    .banner-description {
+        display: none;
+    }
+
+    .banner .banner-info {
+        top: 32%;
     }
 }

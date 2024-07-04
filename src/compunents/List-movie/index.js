@@ -45,6 +45,8 @@ function ListMoive() {
     };
     fetchMovie();
   }, []);
+  console.log("data", newUpDateData);
+
   return (
     <div>
       <MovieContainer data={newUpDateData} movieTitle={"Phim mới cập nhật"} />

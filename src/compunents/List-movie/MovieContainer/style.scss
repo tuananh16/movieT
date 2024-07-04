@@ -53,7 +53,6 @@
 
     .movie {
         position: relative;
-        flex: 0 0 19%; // Hiển thị 5 ảnh cùng lúc
         margin-right: 20px;
         transition: transform 0.3s;
 
@@ -85,12 +84,45 @@
 }
 
 .prev {
-    left: -4%;
+    right: 101%;
     border-radius: 3px 0 0 3px;
 }
 
+/* Màn hình nhỏ hơn 1200px */
+@media (max-width: 1200px) {
+    .movies-list .movie {
+        margin-right: 2px;
+
+        &:hover {
+            z-index: 1;
+        }
+    }
+}
+
+// /* Màn hình nhỏ hơn 992px */
+// @media (max-width: 992px) {
+//     .prev {
+//         left: -7%;
+//     }
+// }
+
+// /* Màn hình nhỏ hơn 768px */
+// @media (max-width: 768px) {
+//     .prev {
+//         left: -8%;
+//     }
+// }
+
+// /* Màn hình nhỏ hơn 576px */
+// @media (max-width: 576px) {
+//     .prev {
+//         left: -18%;
+//     }
+// }
+
+
 .next {
-    right: -4%;
+    left: 98%;
     border-radius: 3px 0 0 3px;
 }
 

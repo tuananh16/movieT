@@ -130,3 +130,16 @@
     }
 
 }
+
+@media (max-width: 1200px) {
+    .detail-movie {
+        display: block;
+        padding: 100px 0px 0px 0px;
+    }
+    .detail-movie .container-right img {
+             margin: 0 0 20px 0
+    }
+    .detail-movie .container-left{
+        margin: 0 10px;
+    }
+}

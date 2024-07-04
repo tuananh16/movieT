@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Movie from "../../movie";
 import "./style.scss";
 import { Link } from "react-router-dom";
@@ -9,20 +9,49 @@ function MovieContainer({ data, movieTitle }) {
 
   const [startIndex, setStartIndex] = useState(0);
   const totalMovies = data.items?.length || 0;
+  const [i, setI] = useState(getResponsiveValue());
+
+  function getResponsiveValue() {
+    const width = window.innerWidth;
+
+    if (width > 1200) {
+      return 6;
+    } else if (width > 992) {
+      return 5;
+    } else if (width > 768) {
+      return 4;
+    } else if (width > 576) {
+      return 3;
+    } else {
+      return 2;
+    }
+  }
+  useEffect(() => {
+    const handleResize = () => {
+      setI(getResponsiveValue());
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    // Cleanup the event listener on component unmount
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   const nextSlide = () => {
-    if (startIndex + 5 < totalMovies) {
-      setStartIndex(startIndex + 5);
+    if (startIndex + i < totalMovies) {
+      setStartIndex(startIndex + i);
     } else {
       setStartIndex(0);
     }
   };
 
   const prevSlide = () => {
-    if (startIndex - 5 >= 0) {
-      setStartIndex(startIndex - 5);
+    if (startIndex - i >= 0) {
+      setStartIndex(startIndex - i);
     } else {
-      const lastIndexGroup = Math.floor(totalMovies / 5) * 5;
+      const lastIndexGroup = Math.floor(totalMovies / i) * i;
       setStartIndex(lastIndexGroup);
     }
   };
@@ -39,9 +68,9 @@ function MovieContainer({ data, movieTitle }) {
             &#10094;
           </button>
           <div className="movies-list">
-            {/* Map over the current 5-movie group */}
+            {/* Map over the current i-movie group */}
             {movies
-              .slice(startIndex, startIndex + 5) // Ensure movies is defined before slicing
+              .slice(startIndex, startIndex + i) // Ensure movies is defined before slicing
               .map((movie, index) => (
                 <Link to={`/phim/${movie.slug}`} className="movie" key={index}>
                   <Movie movie={movie} />

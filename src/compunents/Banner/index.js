@@ -36,7 +36,10 @@ function Banner() {
           </Link>
           <button
             className="default-button btn btn-i"
-            style={{ backgroundColor: "rgba(109, 109, 110, 0.7)" }}
+            style={{
+              backgroundColor: "rgba(109, 109, 110, 0.7)",
+              minWidth: "120px",
+            }}
           >
             <FaInfoCircle />
             chi tiết
