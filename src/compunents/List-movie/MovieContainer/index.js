@@ -4,27 +4,16 @@ import "./style.scss";
 import { Link } from "react-router-dom";
 
 function MovieContainer({ data, movieTitle }) {
-  const movies = data.items;
+  const movies = data;
   // console.log("data", movies);
 
   const [startIndex, setStartIndex] = useState(0);
-  const totalMovies = data.items?.length || 0;
+  const totalMovies = data?.length || 0;
   const [i, setI] = useState(getResponsiveValue());
 
   function getResponsiveValue() {
     const width = window.innerWidth;
-
-    if (width > 1200) {
-      return 6;
-    } else if (width > 992) {
-      return 5;
-    } else if (width > 768) {
-      return 4;
-    } else if (width > 576) {
-      return 3;
-    } else {
-      return 2;
-    }
+    return width / 290 + 1;
   }
   useEffect(() => {
     const handleResize = () => {
@@ -33,7 +22,6 @@ function MovieContainer({ data, movieTitle }) {
 
     window.addEventListener("resize", handleResize);
 
-    // Cleanup the event listener on component unmount
     return () => {
       window.removeEventListener("resize", handleResize);
     };

@@ -69,10 +69,13 @@ function Header() {
         <div className={`collapse-menu ${openNavbar ? "open2" : ""}`}>
           <ul className="nav-links">
             <li style={{ display: "flex", justifyContent: "space-between" }}>
-              Trang chủ
-              <IoMdCloseCircleOutline style={{
-                fontSize:"24px"
-              }} onClick={handleClick} />
+              <a href="/">Trang chủ</a>
+              <IoMdCloseCircleOutline
+                style={{
+                  fontSize: "24px",
+                }}
+                onClick={handleClick}
+              />
             </li>
             <li className="genre">
               Thể loại
@@ -201,7 +204,9 @@ function Header() {
             MovieT
           </a>
           <ul className="nav-links">
-            <li>Trang chủ</li>
+            <li>
+              <a href="/">Trang chủ</a>
+            </li>
             <li className="genre">
               Thể loại
               <table className="genre-container">
